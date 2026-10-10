@@ -1,0 +1,1 @@
+export * from './marketing-example.component'; // @browser
