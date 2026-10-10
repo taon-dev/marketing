@@ -1,0 +1,45 @@
+:host {
+  display: block;
+}
+
+.popup {
+  position: relative;
+  padding: 24px 48px 24px 24px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 45vh;
+  margin: 12px 0;
+  object-fit: contain;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+}

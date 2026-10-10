@@ -1,0 +1,23 @@
+fieldset {
+  border: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+}
+
+input:not([type='checkbox']), textarea, select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  font: inherit;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}

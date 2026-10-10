@@ -1,25 +1,33 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms'; // @browser
-import { TaonMarketingPopupErrors } from './taon-marketing-popup.constants';
+import { ValidatorFn } from '@angular/forms'; // @browser
+import { TaonMarketingPopupUtils } from './taon-marketing-popup.utils';
 
 export namespace TaonMarketingPopupValidators {
   //#region @browser
-  /**
-   * TODO REMOVE THIS EXAMPLE.
-   */
-  export const passwordMatchValidator: ValidatorFn = (
-    control: AbstractControl,
-  ): ValidationErrors | null => {
-    const password = control.get('password');
-    const passwordRepeat = control.get('passwordRepeat');
+  export const paths: ValidatorFn = control => {
+    const value: unknown = control.value;
+    return typeof value === 'string' &&
+      value.split('\n').map(path => path.trim()).filter(Boolean)
+        .every(path => TaonMarketingPopupUtils.isPathPattern(path))
+      ? null : { popupPaths: true };
+  };
 
-    if (!password || !passwordRepeat) {
-      return null;
-    }
+  export const url: ValidatorFn = control => {
+    const value: unknown = control.value;
+    return typeof value === 'string' &&
+      (!value.trim() || TaonMarketingPopupUtils.isSafeUrl(value.trim()))
+      ? null : { popupUrl: true };
+  };
 
-    return password.value === passwordRepeat.value
-      ? null
-      : { [TaonMarketingPopupErrors.INVALID_PASSWORD_EXAMPLE_ERROR]: true };
+  export const optionalPositiveInteger: ValidatorFn = control =>
+    control.value === null ||
+    (Number.isSafeInteger(control.value) && control.value > 0)
+      ? null : { popupDisplayLimit: true };
+
+  export const optionalDate: ValidatorFn = control => {
+    const value: unknown = control.value;
+    return typeof value === 'string' &&
+      (!value || Number.isFinite(new Date(value).getTime()))
+      ? null : { popupDate: true };
   };
   //#endregion
-
 }

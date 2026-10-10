@@ -1,0 +1,17 @@
+@if (currentPopup(); as popup) {
+  <section class="popup">
+    <button class="close" type="button" aria-label="Close popup" (click)="close()">&#215;</button>
+    @if (popup.title) {
+      <h2>{{ popup.title }}</h2>
+    }
+    @if (popup.content) {
+      <p>{{ popup.content }}</p>
+    }
+    @if (currentImage(); as image) {
+      <img [src]="image" alt="">
+    }
+    @if (popup.buttonText && popup.buttonUrl) {
+      <a class="cta" [href]="popup.buttonUrl" (click)="click()">{{ popup.buttonText }}</a>
+    }
+  </section>
+}

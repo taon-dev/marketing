@@ -1,21 +1,27 @@
 //#region imports
 import {
   Taon,
-  ClassHelpers,
   TaonController,
   TaonBaseCrudController,
   Query,
   GET,
+  POST,
+  PUT,
+  DELETE,
+  Body,
 } from 'taon/src';
-import { _ } from 'tnp-core/src';
 
 import { TaonMarketingPopupEntity } from './taon-marketing-popup.entity';
 import { TaonMarketingPopupRepository } from './taon-marketing-popup.repository';
+import type { TaonMarketingPopupFields } from './taon-marketing-popup.models';
 //#endregion
 
 @TaonController<TaonMarketingPopupController>({
   className: 'TaonMarketingPopupController',
-  // allowedMethods: []
+  allowedMethods: [
+    'getAll', 'getBy', 'paginationQuery', 'getActivePopups',
+    'savePopup', 'setEnabled', 'deletePopup',
+  ],
 })
 export class TaonMarketingPopupController extends TaonBaseCrudController<
   TaonMarketingPopupEntity,
@@ -28,23 +34,37 @@ export class TaonMarketingPopupController extends TaonBaseCrudController<
 
   private readonly taonMarketingPopupRepository = this.injectCustomRepo(TaonMarketingPopupRepository);
 
-  //#region methods & getters / hello world
-  /**
-   * TODO remove this demo example method
-   */
   @GET()
-  helloWord(@Query('yourName') yourName: string): Taon.Response<string> {
+  getActivePopups(): Taon.Response<TaonMarketingPopupEntity[]> {
     //#region @websqlFunc
-    return async (req, res) => {
-      const numOfEntities = await this.db.count();
-      const numberOfEvenEntities =
-        await this.taonMarketingPopupRepository.countEntitesWithEvenId();
-      return `Hello ${yourName || 'world'} from ${ClassHelpers.getName(TaonMarketingPopupController)}
-      controller..  ${numOfEntities} entites in db..
-      ${numberOfEvenEntities} entites with even ids (2,4,6,8 etc.)
-      `;
-    };
+    return async () => this.taonMarketingPopupRepository.activePopups();
     //#endregion
   }
-  //#endregion
+
+  @POST()
+  savePopup(
+    @Body() input: TaonMarketingPopupFields,
+    @Query('id') id?: number,
+  ): Taon.Response<TaonMarketingPopupEntity> {
+    //#region @websqlFunc
+    return async () => this.taonMarketingPopupRepository.savePopup(input, id);
+    //#endregion
+  }
+
+  @PUT()
+  setEnabled(
+    @Query('id') id: number,
+    @Body('enabled') enabled: boolean,
+  ): Taon.Response<TaonMarketingPopupEntity> {
+    //#region @websqlFunc
+    return async () => this.taonMarketingPopupRepository.setEnabled(id, enabled);
+    //#endregion
+  }
+
+  @DELETE()
+  deletePopup(@Query('id') id: number): Taon.Response<void> {
+    //#region @websqlFunc
+    return async () => this.taonMarketingPopupRepository.deletePopup(id);
+    //#endregion
+  }
 }

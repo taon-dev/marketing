@@ -10,3 +10,4 @@ export * from './taon-marketing-popup.provider';
 export * from './taon-marketing-popup.repository';
 export * from './taon-marketing-popup.subscriber';
 export * from './taon-marketing-popup.utils';
+export * from './taon-marketing-popups.component'; // @browser

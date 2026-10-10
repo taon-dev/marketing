@@ -39,6 +39,7 @@ export * from './taon-marketing-newsletter/taon-marketing-newsletter.repository'
 export * from './taon-marketing-newsletter/taon-marketing-newsletter.subscriber'; 
 export * from './taon-marketing-newsletter/taon-marketing-newsletter.utils'; 
 export * from './taon-marketing-newsletter/taon-marketing-newsletter.validators'; 
+export * from './taon-marketing-popup/taon-marketing-popup-content.component'; // @browser
 export * from './taon-marketing-popup/taon-marketing-popup.abstract.context'; 
 export * from './taon-marketing-popup/taon-marketing-popup.api.service'; // @browser
 export * from './taon-marketing-popup/taon-marketing-popup.config.service'; // @browser
@@ -52,7 +53,9 @@ export * from './taon-marketing-popup/taon-marketing-popup.provider';
 export * from './taon-marketing-popup/taon-marketing-popup.repository'; 
 export * from './taon-marketing-popup/taon-marketing-popup.subscriber'; 
 export * from './taon-marketing-popup/taon-marketing-popup.utils'; 
+export * from './taon-marketing-popup/taon-marketing-popup.validation'; 
 export * from './taon-marketing-popup/taon-marketing-popup.validators'; 
+export * from './taon-marketing-popup/taon-marketing-popups.component'; // @browser
 export * from './taon-marketing-promo/taon-marketing-promo.abstract.context'; 
 export * from './taon-marketing-promo/taon-marketing-promo.api.service'; // @browser
 export * from './taon-marketing-promo/taon-marketing-promo.config.service'; // @browser
@@ -75,10 +78,10 @@ export * from './taon-marketing-newsletter/i18n/taon-marketing-newsletter.transl
 export * from './taon-marketing-newsletter/taon-marketing-newsletter-backoffice/taon-marketing-newsletter-backoffice.component'; // @browser
 export * from './taon-marketing-newsletter/taon-marketing-newsletter-backoffice/taon-marketing-newsletter-backoffice.models'; 
 export * from './taon-marketing-newsletter/taon-marketing-newsletter-backoffice/taon-marketing-newsletter-backoffice.routes'; // @browser
-export * from './taon-marketing-popup/i18n/taon-marketing-popup.translation'; 
 export * from './taon-marketing-popup/taon-marketing-popup-backoffice/taon-marketing-popup-backoffice.component'; // @browser
 export * from './taon-marketing-popup/taon-marketing-popup-backoffice/taon-marketing-popup-backoffice.models'; 
 export * from './taon-marketing-popup/taon-marketing-popup-backoffice/taon-marketing-popup-backoffice.routes'; // @browser
+export * from './taon-marketing-popup/taon-marketing-popup-backoffice/taon-marketing-popup-editor.component'; // @browser
 export * from './taon-marketing-promo/i18n/taon-marketing-promo.translation'; 
 export * from './taon-marketing-promo/taon-marketing-promo-backoffice/taon-marketing-promo-backoffice.component'; // @browser
 export * from './taon-marketing-promo/taon-marketing-promo-backoffice/taon-marketing-promo-backoffice.models'; 

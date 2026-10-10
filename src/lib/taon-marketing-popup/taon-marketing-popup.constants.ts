@@ -1,19 +1,22 @@
 import type { TaonMarketingPopupEntity } from './taon-marketing-popup.entity';
-import { Translation } from '@taon-dev/i18n/src';
-import { Taon } from 'taon/src';
-
-const t = Translation.for(Taon.__FILE_RELATIVE_PATH, Taon.LANG_IMPORT_MAP);
+import { TaonMarketingPopupType } from './taon-marketing-popup.models';
 
 export const TaonMarketingPopupDefaultsValues = {
-  description: '',
+  name: '',
+  enabled: false,
+  type: TaonMarketingPopupType.Dialog,
+  title: null,
+  content: null,
+  imageKey: null,
+  buttonText: null,
+  buttonUrl: null,
+  delaySeconds: 0,
+  displayOnPaths: null,
+  excludePaths: null,
+  startAt: null,
+  endAt: null,
+  maxDisplaysPerVisitor: null,
+  oncePerSession: true,
   version: 0,
   id: void 0,
-} as Partial<TaonMarketingPopupEntity>;
-
-export enum TaonMarketingPopupErrors {
-  INVALID_PASSWORD_EXAMPLE_ERROR = 'INVALID_PASSWORD_EXAMPLE_ERROR',
-}
-
-export const TaonMarketingPopupTranslationErorsMap = new Map([
-  [TaonMarketingPopupErrors.INVALID_PASSWORD_EXAMPLE_ERROR, t.gettext('Invalid Password')],
-]);
+} satisfies Partial<TaonMarketingPopupEntity>;

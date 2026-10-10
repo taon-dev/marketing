@@ -12,9 +12,12 @@ export const TaonMarketingBackofficeRoutes: Routes = [
       ),
 
     children: [
+      { path: '', pathMatch: 'full', redirectTo: 'popups' },
+      { path: 'popup', pathMatch: 'full', redirectTo: 'popups' },
+      { path: 'ab-testing', pathMatch: 'full', redirectTo: 'ab' },
       adminLazyRoute({
-        path: 'popup',
-        menuItem: 'Popup',
+        path: 'popups',
+        menuItem: 'Popups',
         // @ts-ignore
         icon: 'chat_info',
         expandable: false,
@@ -47,8 +50,8 @@ export const TaonMarketingBackofficeRoutes: Routes = [
       }),
 
       adminLazyRoute({
-        path: 'ab-testing',
-        menuItem: 'AB Testing',
+        path: 'ab',
+        menuItem: 'AB',
         // @ts-expect-error
         icon: 'science',
         expandable: false,

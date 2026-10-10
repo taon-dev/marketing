@@ -1,4 +1,11 @@
-<router-outlet></router-outlet>
-<p>
-  taon-marketing-popup-backoffice works!
-</p>
+<h1>Popups</h1>
+@if (error()) {
+  <p role="alert">{{ error() }}</p>
+}
+<taon-datatable
+  [entityCrudController]="crud"
+  [columns]="columns"
+  [allowedColumns]="['id', 'name', 'type', 'enabled']"
+  searchMode="advanced"
+  (addingItem)="edit()">
+</taon-datatable>

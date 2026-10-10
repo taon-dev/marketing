@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>{{ popup ? 'Edit popup' : 'Add popup' }}</h2>
+<form [formGroup]="form" (ngSubmit)="save()">
+  <mat-dialog-content>
+    @if (error()) {
+      <p role="alert">{{ error() }}</p>
+    }
+    <fieldset [disabled]="busy()">
+      <label>Name <input formControlName="name" maxlength="200" required></label>
+      <label class="checkbox"><input type="checkbox" formControlName="enabled"> Enabled</label>
+      <label>Type
+        <select formControlName="type">
+          @for (type of types; track type) {
+            <option [value]="type">{{ type }}</option>
+          }
+        </select>
+      </label>
+      <label>Title <input formControlName="title"></label>
+      <label>Content <textarea formControlName="content" rows="4"></textarea></label>
+      <label>Image key / URL (dialog only) <input formControlName="imageKey"></label>
+      <label>Button text <input formControlName="buttonText"></label>
+      <label>Button URL <input formControlName="buttonUrl" placeholder="/shop or https://example.com"></label>
+      <label>Delay (seconds) <input type="number" formControlName="delaySeconds" min="0" max="2147483" step="any" required></label>
+      <label>Display on paths
+        <textarea formControlName="displayOnPaths" rows="3" placeholder="/shop/*"></textarea>
+      </label>
+      <label>Exclude paths
+        <textarea formControlName="excludePaths" rows="3" placeholder="/checkout"></textarea>
+      </label>
+      <p>One path per line. Exact paths or a trailing * prefix. Empty display paths means all pages.</p>
+      <label>Start (local time) <input type="datetime-local" formControlName="startAt"></label>
+      <label>End (local time) <input type="datetime-local" formControlName="endAt"></label>
+      <label>Maximum displays per visitor (empty = unlimited)
+        <input type="number" formControlName="maxDisplaysPerVisitor" min="1" step="1">
+      </label>
+      <label class="checkbox"><input type="checkbox" formControlName="oncePerSession"> Once per session</label>
+    </fieldset>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" [disabled]="busy()" (click)="close()">Cancel</button>
+    <button mat-flat-button type="submit" [disabled]="busy()">{{ busy() ? 'Saving...' : 'Save' }}</button>
+  </mat-dialog-actions>
+</form>
