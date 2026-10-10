@@ -44,7 +44,7 @@ export const TaonBaselineBackofficeRoutes: Routes = [
         path: 'marketing',
         menuItem: 'Marketing',
         expandable: true,
-        icon: 'marketing',
+        icon: 'campaign',
         loader: () =>
           import('@taon-dev/marketing/src').then(
             m => m.TaonMarketingBackofficeRoutes,

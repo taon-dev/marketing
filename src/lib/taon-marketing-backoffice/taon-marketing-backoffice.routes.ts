@@ -7,17 +7,56 @@ export const TaonMarketingBackofficeRoutes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./taon-marketing-backoffice.component').then(m => m.TaonMarketingBackofficeComponent),
+      import('./taon-marketing-backoffice.component').then(
+        m => m.TaonMarketingBackofficeComponent,
+      ),
 
     children: [
-      // adminLazyRoute({
-      //   path: 'dashboard',
-      //   menuItem: 'Dashboard',
-      //   icon: 'dashboard',
-      //   expandable: false,
-      //   loader: () =>
-      //     import('./anothermodule.routes').then(m => m.DashboardRoutes),
-      // }),
+      adminLazyRoute({
+        path: 'popup',
+        menuItem: 'Popup',
+        // @ts-ignore
+        icon: 'chat_info',
+        expandable: false,
+        loader: () =>
+          import('@taon-dev/marketing/src').then(
+            m => m.TaonMarketingPopupBackofficeRoutes,
+          ),
+      }),
+
+      adminLazyRoute({
+        path: 'promotions',
+        menuItem: 'Promotions',
+        icon: 'sell',
+        expandable: false,
+        loader: () =>
+          import('@taon-dev/marketing/src').then(
+            m => m.TaonMarketingPromoBackofficeRoutes,
+          ),
+      }),
+
+      adminLazyRoute({
+        path: 'newsletter',
+        menuItem: 'Newsletter',
+        icon: 'info',
+        expandable: false,
+        loader: () =>
+          import('@taon-dev/marketing/src').then(
+            m => m.TaonMarketingNewsletterBackofficeRoutes,
+          ),
+      }),
+
+      adminLazyRoute({
+        path: 'ab-testing',
+        menuItem: 'AB Testing',
+        // @ts-expect-error
+        icon: 'science',
+        expandable: false,
+        loader: () =>
+          import('@taon-dev/marketing/src').then(
+            m => m.TaonMarketingAbBackofficeRoutes,
+          ),
+      }),
     ],
   },
 ];

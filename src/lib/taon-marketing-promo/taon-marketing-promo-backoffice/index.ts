@@ -1,0 +1,1 @@
+export * from './taon-marketing-promo-backoffice.component'; // @browser

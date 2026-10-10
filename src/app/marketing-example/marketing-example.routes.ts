@@ -7,18 +7,9 @@ export const MarketingExampleRoutes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./marketing-example.component').then(m => m.MarketingExampleComponent),
-
-    children: [
-      // adminLazyRoute({
-      //   path: 'dashboard',
-      //   menuItem: 'Dashboard',
-      //   icon: 'dashboard',
-      //   expandable: false,
-      //   loader: () =>
-      //     import('./anothermodule.routes').then(m => m.DashboardRoutes),
-      // }),
-    ],
+      import('./marketing-example.component').then(
+        m => m.MarketingExampleComponent,
+      ),
   },
 ];
 
