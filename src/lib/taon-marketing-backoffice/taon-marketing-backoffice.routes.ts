@@ -18,7 +18,6 @@ export const TaonMarketingBackofficeRoutes: Routes = [
       adminLazyRoute({
         path: 'popups',
         menuItem: 'Popups',
-        // @ts-ignore
         icon: 'chat_info',
         expandable: false,
         loader: () =>
@@ -52,7 +51,6 @@ export const TaonMarketingBackofficeRoutes: Routes = [
       adminLazyRoute({
         path: 'ab',
         menuItem: 'AB',
-        // @ts-expect-error
         icon: 'science',
         expandable: false,
         loader: () =>
