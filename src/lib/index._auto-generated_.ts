@@ -7,7 +7,6 @@ export * from './build-info._auto-generated_';
 export * from './my-organization-proj'; 
 export * from './start-cli'; 
 export * from './taon-marketing.abstract.context'; 
-export * from './i18n/lib.translation'; 
 export * from './taon-marketing-ab/taon-marketing-ab.abstract.context'; 
 export * from './taon-marketing-ab/taon-marketing-ab.api.service'; // @browser
 export * from './taon-marketing-ab/taon-marketing-ab.config.service'; // @browser
@@ -70,11 +69,9 @@ export * from './taon-marketing-promo/taon-marketing-promo.repository';
 export * from './taon-marketing-promo/taon-marketing-promo.subscriber'; 
 export * from './taon-marketing-promo/taon-marketing-promo.utils'; 
 export * from './taon-marketing-promo/taon-marketing-promo.validators'; 
-export * from './taon-marketing-ab/i18n/taon-marketing-ab.translation'; 
 export * from './taon-marketing-ab/taon-marketing-ab-backoffice/taon-marketing-ab-backoffice.component'; // @browser
 export * from './taon-marketing-ab/taon-marketing-ab-backoffice/taon-marketing-ab-backoffice.models'; 
 export * from './taon-marketing-ab/taon-marketing-ab-backoffice/taon-marketing-ab-backoffice.routes'; // @browser
-export * from './taon-marketing-newsletter/i18n/taon-marketing-newsletter.translation'; 
 export * from './taon-marketing-newsletter/taon-marketing-newsletter-backoffice/taon-marketing-newsletter-backoffice.component'; // @browser
 export * from './taon-marketing-newsletter/taon-marketing-newsletter-backoffice/taon-marketing-newsletter-backoffice.models'; 
 export * from './taon-marketing-newsletter/taon-marketing-newsletter-backoffice/taon-marketing-newsletter-backoffice.routes'; // @browser
@@ -82,7 +79,6 @@ export * from './taon-marketing-popup/taon-marketing-popup-backoffice/taon-marke
 export * from './taon-marketing-popup/taon-marketing-popup-backoffice/taon-marketing-popup-backoffice.models'; 
 export * from './taon-marketing-popup/taon-marketing-popup-backoffice/taon-marketing-popup-backoffice.routes'; // @browser
 export * from './taon-marketing-popup/taon-marketing-popup-backoffice/taon-marketing-popup-editor.component'; // @browser
-export * from './taon-marketing-promo/i18n/taon-marketing-promo.translation'; 
 export * from './taon-marketing-promo/taon-marketing-promo-backoffice/taon-marketing-promo-backoffice.component'; // @browser
 export * from './taon-marketing-promo/taon-marketing-promo-backoffice/taon-marketing-promo-backoffice.models'; 
 export * from './taon-marketing-promo/taon-marketing-promo-backoffice/taon-marketing-promo-backoffice.routes'; // @browser
