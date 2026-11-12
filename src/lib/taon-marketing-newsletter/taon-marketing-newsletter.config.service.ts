@@ -9,7 +9,7 @@ import { TaonMarketingNewsletterProvider } from './taon-marketing-newsletter.pro
 
 @Injectable()
 export class TaonMarketingNewsletterConfigService extends TaonBaseAngularService {
-  private taonMarketingNewsletterProvider = this.injectProvider(TaonMarketingNewsletterProvider);
+  private taonMarketingNewsletterProvider = this.inject(TaonMarketingNewsletterProvider);
 
   get isEnableOption() {
     return this.taonMarketingNewsletterProvider.enabledTaonMarketingNewsletterOption;

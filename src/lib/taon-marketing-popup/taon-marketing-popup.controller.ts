@@ -32,7 +32,7 @@ export class TaonMarketingPopupController extends TaonBaseCrudController<
 > {
   entityClassResolveFn: () => typeof TaonMarketingPopupEntity = () => TaonMarketingPopupEntity;
 
-  private readonly taonMarketingPopupRepository = this.injectCustomRepo(TaonMarketingPopupRepository);
+  private readonly taonMarketingPopupRepository = this.inject(TaonMarketingPopupRepository);
 
   @GET()
   getActivePopups(): Taon.Response<TaonMarketingPopupEntity[]> {

@@ -9,7 +9,7 @@ import { TaonMarketingPopupProvider } from './taon-marketing-popup.provider';
 
 @Injectable()
 export class TaonMarketingPopupConfigService extends TaonBaseAngularService {
-  private taonMarketingPopupProvider = this.injectProvider(TaonMarketingPopupProvider);
+  private taonMarketingPopupProvider = this.inject(TaonMarketingPopupProvider);
 
   get isEnableOption() {
     return this.taonMarketingPopupProvider.enabledTaonMarketingPopupOption;

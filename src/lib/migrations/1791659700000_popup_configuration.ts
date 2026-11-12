@@ -8,7 +8,7 @@ import { TaonMarketingPopupRepository } from '../taon-marketing-popup/taon-marke
   className: 'MarketingContext_1791659700000_popup_configuration',
 })
 export class MarketingContext_1791659700000_popup_configuration extends TaonBaseMigration {
-  private readonly popups = this.injectCustomRepo(TaonMarketingPopupRepository);
+  private readonly popups = this.inject(TaonMarketingPopupRepository);
 
   async up(queryRunner: QueryRunner): Promise<void> {
     // TODO What is this ?

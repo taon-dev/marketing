@@ -9,7 +9,7 @@ import { TaonMarketingPromoProvider } from './taon-marketing-promo.provider';
   // allowedEvents: ['afterUpdate'],
 })
 export class TaonMarketingPromoSubscriber extends TaonBaseSubscriberForEntity {
-  private readonly taonMarketingPromoProvider = this.injectProvider(TaonMarketingPromoProvider);
+  private readonly taonMarketingPromoProvider = this.inject(TaonMarketingPromoProvider);
   listenTo(): typeof TaonMarketingPromoEntity {
     return TaonMarketingPromoEntity;
   }

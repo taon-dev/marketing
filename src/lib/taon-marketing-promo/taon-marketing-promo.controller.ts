@@ -26,7 +26,7 @@ export class TaonMarketingPromoController extends TaonBaseCrudController<
 > {
   entityClassResolveFn: () => typeof TaonMarketingPromoEntity = () => TaonMarketingPromoEntity;
 
-  private readonly taonMarketingPromoRepository = this.injectCustomRepo(TaonMarketingPromoRepository);
+  private readonly taonMarketingPromoRepository = this.inject(TaonMarketingPromoRepository);
 
   //#region methods & getters / hello world
   /**

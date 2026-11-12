@@ -11,7 +11,7 @@ import type { TaonMarketingPopupFields } from './taon-marketing-popup.models';
 
 @Injectable()
 export class TaonMarketingPopupApiService extends TaonBaseAngularService {
-  public readonly taonMarketingPopupController = this.injectController(TaonMarketingPopupController);
+  public readonly taonMarketingPopupController = this.inject(TaonMarketingPopupController);
 
   public get allMyEntities$(): Observable<TaonMarketingPopupEntity[]> {
     return this.taonMarketingPopupController.getAll().request!().observable.pipe(

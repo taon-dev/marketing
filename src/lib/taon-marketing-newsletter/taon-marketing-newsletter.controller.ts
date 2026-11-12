@@ -26,7 +26,7 @@ export class TaonMarketingNewsletterController extends TaonBaseCrudController<
 > {
   entityClassResolveFn: () => typeof TaonMarketingNewsletterEntity = () => TaonMarketingNewsletterEntity;
 
-  private readonly taonMarketingNewsletterRepository = this.injectCustomRepo(TaonMarketingNewsletterRepository);
+  private readonly taonMarketingNewsletterRepository = this.inject(TaonMarketingNewsletterRepository);
 
   //#region methods & getters / hello world
   /**

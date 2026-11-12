@@ -10,7 +10,7 @@ import { TaonMarketingNewsletterController } from './taon-marketing-newsletter.c
 
 @Injectable()
 export class TaonMarketingNewsletterApiService extends TaonBaseAngularService {
-  public readonly taonMarketingNewsletterController = this.injectController(TaonMarketingNewsletterController);
+  public readonly taonMarketingNewsletterController = this.inject(TaonMarketingNewsletterController);
 
   public get allMyEntities$(): Observable<TaonMarketingNewsletterEntity[]> {
     return this.taonMarketingNewsletterController.getAll().request!().observable.pipe(
