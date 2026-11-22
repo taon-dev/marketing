@@ -8,4 +8,9 @@ export const MIGRATIONS_CLASSES_FOR_MarketingContext = {
   /* 04-10-2026 18:48:37 */ MarketingContext_1791132517216_initial,
   /* 10-10-2026 21:15:00 */ MarketingContext_1791659700000_popup_configuration,
 };
+export const MIGRATIONS_CLASSES_FOR_TaonMarketingAbAbstractContext = {};
+export const MIGRATIONS_CLASSES_FOR_TaonMarketingAbstractContext = {};
+export const MIGRATIONS_CLASSES_FOR_TaonMarketingNewsletterAbstractContext = {};
+export const MIGRATIONS_CLASSES_FOR_TaonMarketingPopupAbstractContext = {};
+export const MIGRATIONS_CLASSES_FOR_TaonMarketingPromoAbstractContext = {};
 // THIS FILE IS GENERATED - DO NOT MODIFY
